@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+      <head>
+      <title><ui:insert name="pageTitle">Milestone 3</ui:insert></title>
+      	
+      	
+      
+      </head>
+      
+      <h:body>
+      
+      
+     
+      	<ui:composition template="/layouts/commonLayout.xhtml">
+
+			
+      		<ui:define name="content">
+      			<div align="center">
+      			<h:form>
+      			First Name:<h:inputText value="#{user.firstName}"></h:inputText>
+      			<br></br>
+      			Location:<h:inputText value="#{user.lastName}"></h:inputText>
+      			<br></br>
+      		
+      			<h:commandButton action="#{formController.onSubmit()}" value="Submit"></h:commandButton>
+      			</h:form>
+      			<h:messages />
+      			</div>
+      		</ui:define>
+
+      	</ui:composition>
+     
+      </h:body>
+
+	
+</html>

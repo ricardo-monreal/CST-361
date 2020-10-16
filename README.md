@@ -1,2 +1,2 @@
-# CST-361
-GCU CST-361 
+# CST-361-Milestones
+All the Milestones will be posted in this repository

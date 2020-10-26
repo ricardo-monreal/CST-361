@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+      <h:head>
+      	<h:outputStylesheet library = "css" name="style.css"></h:outputStylesheet>
+      </h:head>
+      
+<body>
+<div class="topmenu">
+	<h:form>
+		<h:commandButton action="#{formController.showEntryForm()}" value="Create a new album." />
+		<h:commandButton action="#{formController.showIndex()}" value="Show All" />
+	</h:form>
+</div>
+<h2 class="centeredheadline">These are my favorite albums</h2>
+	<h:dataTable value="#{formController.getAll()}" var="album">
+	<h:column>
+		<f:facet name="header">Id</f:facet>
+		<h:outputText value="#{album.id}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Album Title</f:facet>
+		<h:outputText value="#{album.albumTitle}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Artist</f:facet>
+		<h:outputText value="#{album.albumArtitst}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Year Released</f:facet>
+		<h:outputText value="#{album.albumYear}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">No. of Tracks</f:facet>
+		<h:outputText value="#{album.albumTracks}" />
+	</h:column>
+	<h:column>
+		<f:facet name="header">Deletes</f:facet>
+			<h:form>
+				<h:commandButton action="#{formController.onDelete(album)}" value="Delete" />
+			</h:form>
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">Edits</f:facet>
+			<h:form>
+				<h:commandButton action="#{formController.onShowEdit(album)}" value="Edit" />
+			</h:form>
+	</h:column>
+	
+
+	</h:dataTable>
+
+</body>
+
+		
+</html>

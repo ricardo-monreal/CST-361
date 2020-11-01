@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich">
+      
+      <h:head>
+      	<h:outputStylesheet library = "css" name="style.css"></h:outputStylesheet>
+      </h:head>
+      
+<body>  
+<div class="topmenu">
+	<h:form>
+		<h:commandButton action="#{formController.showEntryForm()}" value="Create a new album." />
+		<h:commandButton action="#{formController.showIndex()}" value="Show All" />
+	</h:form>
+</div> 
+<h1 class="centeredheadline"> Please make any changes you want.</h1>
+
+	<div class="inputForm">
+	
+	<h:form>
+	<h:inputHidden value="#{album.id}" />
+		
+		
+		<p>
+		Album Title. 
+		<h:inputText value="#{album.albumTitle}" />
+		</p>
+		<p>
+		Album Artist.
+		<h:inputText value="#{album.albumArtitst}" />
+		
+		</p>
+		<p>
+		Album Year.
+		<h:inputText value="#{album.albumYear}" />
+		</p>
+		<p>
+		No. of Tracks.
+		<h:inputText value="#{album.albumTracks}" />
+		</p>
+		<p>
+			<h:commandButton action="#{formController.onSubmitEdit()}" value="OK" />
+		</p>
+		
+	</h:form>
+	</div>	
+</body>
+		
+</html>
